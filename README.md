@@ -1,13 +1,13 @@
-# Regen Groups UI
+# Qwoyn Network Groups Module User Interface
 
-[Regen network](https://regen.network/) UI for Cosmos groups module
+[Qwoyn Network](https://qwoyn.studio/) UI for Cosmos groups module
 
 ## Table of Contents
 
-- [Regen Groups UI](#regen-groups-ui)
+- [Qwoyn Network Groups Module UI](#qwoyn-groups-ui)
   - [Table of Contents](#table-of-contents)
 - [Local Setup](#local-setup)
-  - [Install Regen Ledger](#install-regen-ledger)
+  - [Install Qwoyn Network binary](#install-qwoyn-ledger)
   - [Makefile commands](#makefile-commands)
   - [Keplr](#keplr)
   - [IDE](#ide)
@@ -24,9 +24,9 @@
 3. `yarn dev` to run the repo
 4. (optional) `yarn storybook` to see component examples
 
-## Install Regen Ledger
+## Install Qwoyn Network binary
 
-`make install-local-ledger` - this will install the regen ledger binary to `local-ledger/regen` in order to be used by other makefile commands. Note: this will wipe any existing local regen ledger data
+`make install-local-qwoyn` - this will install the Qwoyn Network binary to `local-ledger/qwoynd` in order to be used by other makefile commands. Note: this will wipe any existing local Qwoyn Network data
 
 ## Makefile commands
 
@@ -94,3 +94,7 @@ Ledger calls & typescript types are generated using [telescope](https://github.c
 ## Linting
 
 `yarn lint` - format with Prettier, fix linting errors
+
+## Thanks
+
+A heartfelt shoutout to the incredible Regen Ledger team for their remarkable efforts in bringing both the groups module and its stunning user interface to life! Your dedication and hard work are truly commendable. Thank you for making it all possible!

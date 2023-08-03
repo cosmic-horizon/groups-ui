@@ -1,12 +1,12 @@
-CHAIN_HOME=$(shell pwd)/local-ledger/.regen
-CHAIN_ID=regen-local
-COIN_DENOM=uregen
-GENESIS_ACCT_ADDR=regen1kdzkazludrnmnzchcxgs6znsjph5ugx4u45w4n
+CHAIN_HOME=$(shell pwd)/local-qwoyn/.qwoynd
+CHAIN_ID=qwoyn-local
+COIN_DENOM=uqwoyn
+GENESIS_ACCT_ADDR=qwoyn1kdzkazludrnmnzchcxgs6znsjph5ugx47h7vyk
 GENESIS_ACCT_NAME=alice
-LEDGER=$(shell pwd)/local-ledger/regen
-LEDGER_BRANCH=v5.1.0
-MONIKER=regen-local-1
-USER_ADDR=regen106ljn6kds9vegaux0w4jnend97fdm50yx6le6y
+LEDGER=$(shell pwd)/local-qwoyn/qwoynd
+LEDGER_BRANCH=v5.2.0
+MONIKER=qwoyn-local-1
+USER_ADDR=qwoyn106ljn6kds9vegaux0w4jnend97fdm50yyc4mtp
 USER_NAME=user1
 
 NOW=$(shell date +%s%3)
@@ -28,15 +28,15 @@ endif
 
 .PHONY: install-local-ledger
 install-local-ledger:
-	rm -rf local-ledger
-	git clone --depth 1 --branch $(LEDGER_BRANCH) https://github.com/regen-network/regen-ledger.git local-ledger/temp
-	cd local-ledger/temp && make build
-	mv local-ledger/temp/build/regen local-ledger/regen
-	rm -rf local-ledger/temp
+	rm -rf local-qwoyn
+	git clone --depth 1 --branch $(LEDGER_BRANCH) https://github.com/cosmic-horizon/QWOYN.git local-qwoyn/temp
+	cd local-qwoyn/temp && make build
+	mv local-ledger/temp/build/qwoyn local-qwoyn/qwoynd
+	rm -rf local-qwoyn/temp
 
 .PHONY: local-clean
 local-clean:
-	rm -rf $(CHAIN_HOME) && rm -rf $(HOME)/local-ledger
+	rm -rf $(CHAIN_HOME) && rm -rf $(HOME)/local-qwoyn
 
 .PHONY: local-keys
 local-keys:
