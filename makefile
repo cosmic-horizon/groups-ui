@@ -26,12 +26,12 @@ ifeq ($(UNAME), Darwin) # MacOS
 	base64=base64
 endif
 
-.PHONY: install-local-ledger
-install-local-ledger:
+.PHONY: install-local-qwoyn
+install-local-qwoyn:
 	rm -rf local-qwoyn
 	git clone --depth 1 --branch $(LEDGER_BRANCH) https://github.com/cosmic-horizon/QWOYN.git local-qwoyn/temp
 	cd local-qwoyn/temp && make build
-	mv local-ledger/temp/build/qwoyn local-qwoyn/qwoynd
+	mv local-qwoyn/temp/build/qwoynd local-qwoyn/qwoynd
 	rm -rf local-qwoyn/temp
 
 .PHONY: local-clean

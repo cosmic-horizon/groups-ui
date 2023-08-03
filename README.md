@@ -24,9 +24,25 @@
 3. `yarn dev` to run the repo
 4. (optional) `yarn storybook` to see component examples
 
+## Install Go
+
+```shell
+sudo apt install git build-essential wget jq -y
+wget https://dl.google.com/go/go1.20.3.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
+
+echo "" >> ~/.bashrc
+echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
+echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:/usr/local/go/bin:$GOBIN' >> ~/.bashrc
+
+source ~/.bashrc
+```
+
 ## Install Qwoyn Network binary
 
-`make install-local-qwoyn` - this will install the Qwoyn Network binary to `local-ledger/qwoynd` in order to be used by other makefile commands. Note: this will wipe any existing local Qwoyn Network data
+`make install-local-qwoyn` - this will install the Qwoyn Network binary to `local-qwoyn/qwoynd` in order to be used by other makefile commands. Note: this will wipe any existing local Qwoyn Network data
 
 ## Makefile commands
 
