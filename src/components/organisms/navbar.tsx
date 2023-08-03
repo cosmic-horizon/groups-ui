@@ -22,7 +22,7 @@ export const Navbar = () => {
             variant="ghost"
             as={RouteLink}
             to={ROUTE_PATH.home}
-            icon="../../assets/png/qwoyn-studios-4by2-02.png"
+            icon={<GroupsIcon />}
           />
           <Flex flex={1} justifyContent="flex-end">
             <Box maxW={[200, 300]} flex={1} mr={2}>
