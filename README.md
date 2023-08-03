@@ -7,7 +7,7 @@
 - [Qwoyn Network Groups Module UI](#qwoyn-groups-ui)
   - [Table of Contents](#table-of-contents)
 - [Local Setup](#local-setup)
-  - [Install Qwoyn Network binary](#install-qwoyn-ledger)
+  - [Install Qwoyn Network binary](#install-qwoyn-network-binary)
   - [Makefile commands](#makefile-commands)
   - [Keplr](#keplr)
   - [IDE](#ide)
