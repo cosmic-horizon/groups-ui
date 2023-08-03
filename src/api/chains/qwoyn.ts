@@ -3,7 +3,7 @@ import type { AppCurrency, ChainInfo } from '@keplr-wallet/types'
 import { Bech32Address } from 'util/bech32'
 
 const {
-    VITE_LOCAL_QWOYN_HOSTNAME,
+    VITE_LOCAL_HOSTNAME,
     VITE_PROXY_URL_QWOYN_MAINNET,
     VITE_PROXY_URL_QWOYN_TESTNET,
 } = import.meta.env
@@ -24,8 +24,8 @@ const currencies: AppCurrency[] = [QWOYN]
 
 export const qwoynLocal: ChainInfo = {
     // hardcoded port values based on makefile
-    rpc: `${VITE_LOCAL_QWOYN_HOSTNAME}:26657`,
-    rest: `${VITE_LOCAL_QWOYN_HOSTNAME}:1317`,
+    rpc: `${VITE_LOCAL_HOSTNAME}:26657`,
+    rest: `${VITE_LOCAL_HOSTNAME}:1317`,
     chainId: 'qwoyn-local',
     chainName: 'Qwoyn Local',
     stakeCurrency: QWOYN,
