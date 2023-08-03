@@ -7,7 +7,7 @@ export const EnableKeplr = () => {
   return (
     <AlertTemplate
       status="info"
-      text="You need to enable Keplr to run this app"
+      text="Keplr Wallet needs to be installed and open to use this app"
       btnText="Enable"
       onBtnClick={bootstrapKeplr}
     >
