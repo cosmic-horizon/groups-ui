@@ -1,12 +1,12 @@
-CHAIN_HOME=$(shell pwd)/local-ledger/.regen
-CHAIN_ID=regen-local
-COIN_DENOM=uregen
-GENESIS_ACCT_ADDR=regen1kdzkazludrnmnzchcxgs6znsjph5ugx4u45w4n
+CHAIN_HOME=$(shell pwd)/local-ledger/.qwoyn
+CHAIN_ID=qwoyn-local
+COIN_DENOM=uqwoyn
+GENESIS_ACCT_ADDR=qwoyn106ljn6kds9vegaux0w4jnend97fdm50yyc4mtp
 GENESIS_ACCT_NAME=alice
-LEDGER=$(shell pwd)/local-ledger/regen
-LEDGER_BRANCH=v5.1.0
-MONIKER=regen-local-1
-USER_ADDR=regen106ljn6kds9vegaux0w4jnend97fdm50yx6le6y
+LEDGER=$(shell pwd)/local-ledger/qwoyn
+LEDGER_BRANCH=v5.2.0
+MONIKER=qwoyn-local-1
+USER_ADDR=qwoyn106ljn6kds9vegaux0w4jnend97fdm50yyc4mtp
 USER_NAME=user1
 
 NOW=$(shell date +%s%3)
@@ -29,9 +29,9 @@ endif
 .PHONY: install-local-ledger
 install-local-ledger:
 	rm -rf local-ledger
-	git clone --depth 1 --branch $(LEDGER_BRANCH) https://github.com/regen-network/regen-ledger.git local-ledger/temp
+	git clone --depth 1 --branch $(LEDGER_BRANCH) https://github.com/cosmic-horizon/QWOYN.git local-ledger/temp
 	cd local-ledger/temp && make build
-	mv local-ledger/temp/build/regen local-ledger/regen
+	mv local-ledger/temp/build/qwoyn local-ledger/qwoyn
 	rm -rf local-ledger/temp
 
 .PHONY: local-clean
@@ -47,9 +47,9 @@ local-keys:
 local-init: local-clean local-keys
 	$(LEDGER) init $(MONIKER) --chain-id $(CHAIN_ID) --home $(CHAIN_HOME)
 	$(sed) "s/stake/$(COIN_DENOM)/" $(CHAIN_HOME)/config/genesis.json
-	$(LEDGER) add-genesis-account $(GENESIS_ACCT_NAME) 10000000000000000000000001$(COIN_DENOM) --home $(CHAIN_HOME) --keyring-backend test
-	$(LEDGER) gentx $(GENESIS_ACCT_NAME) 1000000000$(COIN_DENOM) --chain-id $(CHAIN_ID) --home $(CHAIN_HOME) --keyring-backend test --keyring-dir $(CHAIN_HOME)
-	$(LEDGER) collect-gentxs --home $(CHAIN_HOME)
+	$(LEDGER) genesis add-genesis-account $(GENESIS_ACCT_NAME) 10000000000000000000000001$(COIN_DENOM) --home $(CHAIN_HOME) --keyring-backend test
+	$(LEDGER) genesis gentx $(GENESIS_ACCT_NAME) 1000000000$(COIN_DENOM) --chain-id $(CHAIN_ID) --home $(CHAIN_HOME) --keyring-backend test --keyring-dir $(CHAIN_HOME)
+	$(LEDGER) genesis collect-gentxs --home $(CHAIN_HOME)
 	$(sed) "s/prometheus = false/prometheus = true/" $(CHAIN_HOME)/config/config.toml
 	$(sed) "s/cors_allowed_origins = \[\]/cors_allowed_origins = [\"*\"]/" $(CHAIN_HOME)/config/config.toml
 	$(sed) "s/laddr = \"tcp:\/\/127.0.0.1:26657\"/laddr = \"tcp:\/\/0.0.0.0:26657\"/" $(CHAIN_HOME)/config/config.toml
