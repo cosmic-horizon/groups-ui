@@ -15,7 +15,7 @@ const {
   VITE_PROXY_URL_QWOYN_TESTNET,
 } = import.meta.env
 
-import { qwoynLocal, qwoynMainnet, qwoynTestnet } from './regen'
+import { qwoynLocal, qwoynMainnet, qwoynTestnet } from './qwoyn'
 
 export interface ChainInfoExtended extends ChainInfo {
   indexer: string
