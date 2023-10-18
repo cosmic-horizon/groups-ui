@@ -49,11 +49,11 @@ export const qwoynLocal: ChainInfoExtended = {
  */
 export const qwoynMainnet: ChainInfoExtended = {
   rpc: VITE_PROXY_URL_QWOYN_MAINNET
-    ? `${VITE_PROXY_URL_QWOYN_MAINNET}/ledger`
-    : 'https://api.qwoyn.studio/ledger',
+    ? `${VITE_PROXY_URL_QWOYN_MAINNET}/`
+    : 'https://api.qwoyn.studio/',
   rest: VITE_PROXY_URL_QWOYN_MAINNET
-    ? `${VITE_PROXY_URL_QWOYN_MAINNET}/ledger-rest`
-    : 'https://api.qwoyn.studio/ledger-rest',
+    ? `${VITE_PROXY_URL_QWOYN_MAINNET}/`
+    : 'https://api.qwoyn.studio/',
   indexer:
     VITE_INDEXER_GRAPHQL_API_QWOYN_MAINNET ||
     'https://api.qwoyn.studio/indexer/v1/graphql',
@@ -70,11 +70,11 @@ export const qwoynMainnet: ChainInfoExtended = {
 
 export const qwoynTestnet: ChainInfoExtended = {
   rpc: VITE_PROXY_URL_QWOYN_TESTNET
-    ? `${VITE_PROXY_URL_QWOYN_TESTNET}/ledger`
-    : 'https://66.42.74.12:26657/ledger',
+    ? `${VITE_PROXY_URL_QWOYN_TESTNET}/`
+    : 'https://66.42.74.12:26657/',
   rest: VITE_PROXY_URL_QWOYN_TESTNET
-    ? `${VITE_PROXY_URL_QWOYN_TESTNET}/ledger-rest`
-    : 'https://api.qwoyn.studio/ledger-rest',
+    ? `${VITE_PROXY_URL_QWOYN_TESTNET}/`
+    : 'https://api.qwoyn.studio/',
   indexer:
     VITE_INDEXER_GRAPHQL_API_QWOYN_TESTNET ||
     'https://66.42.74.12:1317/indexer/v1/graphql',
